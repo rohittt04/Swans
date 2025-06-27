@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="chat-container">
+        <aside class="sidebar">
+            <div class="user-profile">
+                <img src="image/download.jpeg" alt="User Avatar" width="30" height="30">
+                <span>Adam</span>
+            </div>
+            <div class="search-bar">
+                <input type="text" placeholder="Search or start new chat">
+            </div>
+            <div class="contact-list">
+                <ul>
+                    <li class="contact">
+                        <img src="image/p2.jpeg" alt="Contact Avatar" width="25" height="25">
+                        <span>Eve</span>
+                    </li>
+                    <li class="contact active">
+                        <img src="image/p3.jpeg" alt="Contact Avatar" width="25" height="25">
+                        <span>kavin</span>
+                    </li>
+                    <li class="contact">
+                        <img src="image/p4.jpeg" alt="Contact Avatar" width="25" height="25">
+                        <span>Bob</span>
+                    </li>
+                    </ul>
+            </div>
+        </aside>
+        <main class="chat-area">
+            <div class="chat-header">
+                <div class="recipient-info">
+                    <img src="image/p3.jpeg" alt="Recipient Avatar" width="30" height="30">
+                    <span>Kavin</span>
+                </div>
+                <div class="chat-options">
+                    <span>...</span>
+                </div>
+            </div>
+            <div class="message-container">
+                <div class="message received">Hello!</div>
+                <div class="message sent">Hi there! How are you?</div>
+                <div class="message received">I'm doing well, thanks!</div>
+            </div>
+            <div class="input-area">
+                <button class="attach-button">+</button>
+                <input type="text" class="message-input" placeholder="Type a message...">
+                <button class="send-button">Send</button>
+            </div>
+        </main>
+    </div>
+  <script src="script.js"></script>
+</body>
+</html>
