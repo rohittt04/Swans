@@ -1,0 +1,261 @@
+
+/* Profile Css */
+
+/* CSS Variables for consistent spacing and colors */
+:root {
+    --spacing-1: 0.25rem;   /* 4px */
+    --spacing-2: 0.5rem;    /* 8px */
+    --spacing-3: 0.75rem;   /* 12px */
+    --spacing-4: 1rem;      /* 16px */
+    --spacing-6: 1.5rem;    /* 24px */
+    --spacing-12: 3rem;     /* 48px */
+    --spacing-24: 6rem;     /* 96px */
+
+    --font-size-sm: 0.875rem; /* 14px */
+    --font-size-base: 1rem;   /* 16px */
+    --font-size-lg: 1.125rem; /* 18px */
+    --font-size-xl: 1.25rem;  /* 20px */
+    --font-size-2xl: 1.5rem;  /* 24px */
+    --font-size-6xl: 3.75rem; /* 60px */
+    --font-size-8xl: 6rem;    /* 96px */
+
+    --border-radius-default: 0.75rem; /* 12px */
+    --border-radius-full: 9999px;
+
+    /* Colors */
+    --color-pink-500: #EC4899;
+    --color-gray-800: #1F2937;
+    --color-gray-600: #4B5563;
+    --color-white: #FFFFFF;
+    --color-background: #f0f2f5;
+    --color-header-gradient-start: #f0b7d3;
+    --color-header-gradient-end: #a2ddf5;
+    --color-profile-avatar-gradient-start: #f0b7d3;
+    --color-profile-avatar-gradient-end: #a2ddf5;
+    --color-button-edit-gradient-start: #ff7e5f; /* Orange */
+    --color-button-edit-gradient-end: #feb47b;   /* Peach */
+    --color-button-preview-background: #e2e8f0; /* Light grey */
+    --color-button-preview-text: #333;
+}
+
+/* Base Body Styles */
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--color-background);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+}
+
+/* Header Section Styles (Consistent with Chat App) */
+.header {
+    background: linear-gradient(45deg, var(--color-header-gradient-start), var(--color-header-gradient-end));
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    padding: var(--spacing-4) var(--spacing-6);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-logo-group {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-2);
+}
+
+.header-logo-img {
+    width: var(--spacing-12);
+    height: var(--spacing-12);
+    object-fit: contain;
+}
+
+.header-title {
+    font-size: var(--font-size-2xl);
+    font-weight: 700;
+    color: var(--color-gray-800);
+}
+
+.header-nav {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-6);
+}
+
+.header-nav-link {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-2);
+    color: var(--color-gray-600);
+    transition: color 0.3s ease;
+    text-decoration: none;
+    padding-bottom: var(--spacing-1);
+}
+
+.header-nav-link:hover {
+    color: var(--color-header-gradient-start); /* Light pink hover for consistency */
+}
+
+.header-nav-link.active {
+    background-color: var(--color-pink-500);
+    color: var(--color-white);
+    font-weight: 600;
+    border-bottom: none;
+    padding: var(--spacing-2) var(--spacing-3);
+    border-radius: var(--border-radius-full);
+    display: flex;
+    align-items: center;
+}
+
+.header-nav-link.active .header-nav-link-icon,
+.header-nav-link.active .header-nav-link-text {
+    color: var(--color-white);
+}
+
+.header-nav-link-icon {
+    font-size: var(--font-size-base);
+}
+
+.header-nav-link-text {
+    font-weight: 500;
+}
+
+/* Main Content Area */
+.main-content {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: var(--spacing-6); /* Add some padding around the card */
+}
+
+/* Profile Card Styles */
+.profile-card {
+    background-color: var(--color-white);
+    border-radius: var(--border-radius-default);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+    padding: var(--spacing-6);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 30rem; /* Limit width for better presentation */
+    width: 100%; /* Ensure it takes full width up to max-width */
+    text-align: center;
+}
+
+.profile-avatar-placeholder {
+    width: var(--spacing-24); /* 96px */
+    height: var(--spacing-24); /* 96px */
+    border-radius: var(--border-radius-full);
+    background: linear-gradient(45deg, var(--color-profile-avatar-gradient-start), var(--color-profile-avatar-gradient-end));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: var(--spacing-4);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.06);
+}
+
+.profile-avatar-icon {
+    font-size: var(--font-size-8xl); /* Larger icon size */
+    color: var(--color-white);
+    opacity: 0.7; /* Slightly transparent */
+}
+
+.profile-title {
+    font-size: var(--font-size-2xl);
+    font-weight: 700;
+    color: var(--color-gray-800);
+    margin-bottom: var(--spacing-2);
+}
+
+.profile-description {
+    font-size: var(--font-size-base);
+    color: var(--color-gray-600);
+    margin-bottom: var(--spacing-6);
+    line-height: 1.5;
+    max-width: 25rem; /* Limit description width */
+}
+
+.profile-actions {
+    display: flex;
+    flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
+    justify-content: center;
+    gap: var(--spacing-4); /* Space between buttons */
+    width: 100%; /* Ensure actions take full width of card */
+}
+
+.button {
+    padding: var(--spacing-3) var(--spacing-6);
+    border-radius: var(--border-radius-full);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex; /* Use inline-flex for icon and text alignment */
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-2); /* Space between icon and text */
+    border: none; /* Remove default button border */
+    flex-grow: 1; /* Allow buttons to grow and fill space */
+    max-width: 12rem; /* Max width for buttons */
+}
+
+.button-icon {
+    font-size: var(--font-size-base);
+}
+
+.button-edit {
+    background: linear-gradient(45deg, #f0b7d3, #a2ddf5);
+    color: var(--color-white);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.06);
+}
+
+.button-edit:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 12px -2px rgba(255, 126, 95, 0.3), 0 4px 6px -2px rgba(255, 126, 95, 0.2);
+}
+
+.button-preview {
+    background-color: var(--color-button-preview-background);
+    color: var(--color-button-preview-text);
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+.button-preview:hover {
+    background-color: #d1d5db; /* Lighter grey on hover */
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: var(--spacing-4);
+    }
+
+    .header-nav {
+        width: 100%;
+        justify-content: space-around;
+        margin-top: var(--spacing-4);
+    }
+
+    .main-content {
+        padding: var(--spacing-4);
+    }
+
+    .profile-card {
+        padding: var(--spacing-4);
+    }
+
+    .profile-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .button {
+        width: 100%;
+        max-width: none; /* Remove max-width on small screens */
+    }
+}
