@@ -32,9 +32,9 @@
     --color-header-gradient-end: #a2ddf5;
     --color-profile-avatar-gradient-start: #f0b7d3;
     --color-profile-avatar-gradient-end: #a2ddf5;
-    --color-button-edit-gradient-start: #ff7e5f; /* Orange */
-    --color-button-edit-gradient-end: #feb47b;   /* Peach */
-    --color-button-preview-background: #e2e8f0; /* Light grey */
+    --color-button-edit-gradient-start: #ff7e5f; 
+    --color-button-edit-gradient-end: #feb47b;  
+    --color-button-preview-background: #e2e8f0; 
     --color-button-preview-text: #333;
 }
 
@@ -93,7 +93,7 @@ body {
 }
 
 .header-nav-link:hover {
-    color: var(--color-header-gradient-start); /* Light pink hover for consistency */
+    color: var(--color-header-gradient-start); 
 }
 
 .header-nav-link.active {
@@ -126,7 +126,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: var(--spacing-6); /* Add some padding around the card */
+    padding: var(--spacing-6); 
 }
 
 /* Profile Card Styles */
@@ -138,14 +138,14 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-width: 30rem; /* Limit width for better presentation */
-    width: 100%; /* Ensure it takes full width up to max-width */
+    max-width: 30rem; 
+    width: 100%; 
     text-align: center;
 }
 
 .profile-avatar-placeholder {
-    width: var(--spacing-24); /* 96px */
-    height: var(--spacing-24); /* 96px */
+    width: var(--spacing-24); 
+    height: var(--spacing-24); 
     border-radius: var(--border-radius-full);
     background: linear-gradient(45deg, var(--color-profile-avatar-gradient-start), var(--color-profile-avatar-gradient-end));
     display: flex;
@@ -156,9 +156,9 @@ body {
 }
 
 .profile-avatar-icon {
-    font-size: var(--font-size-8xl); /* Larger icon size */
+    font-size: var(--font-size-8xl); 
     color: var(--color-white);
-    opacity: 0.7; /* Slightly transparent */
+    opacity: 0.7; 
 }
 
 .profile-title {
@@ -173,15 +173,15 @@ body {
     color: var(--color-gray-600);
     margin-bottom: var(--spacing-6);
     line-height: 1.5;
-    max-width: 25rem; /* Limit description width */
+    max-width: 25rem; 
 }
 
 .profile-actions {
     display: flex;
-    flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
+    flex-wrap: wrap; 
     justify-content: center;
-    gap: var(--spacing-4); /* Space between buttons */
-    width: 100%; /* Ensure actions take full width of card */
+    gap: var(--spacing-4); 
+    width: 100%; 
 }
 
 .button {
@@ -190,13 +190,13 @@ body {
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease;
-    display: inline-flex; /* Use inline-flex for icon and text alignment */
+    display: inline-flex; 
     align-items: center;
     justify-content: center;
-    gap: var(--spacing-2); /* Space between icon and text */
-    border: none; /* Remove default button border */
-    flex-grow: 1; /* Allow buttons to grow and fill space */
-    max-width: 12rem; /* Max width for buttons */
+    gap: var(--spacing-2); 
+    border: none; 
+    flex-grow: 1; 
+    max-width: 12rem; 
 }
 
 .button-icon {
@@ -222,7 +222,7 @@ body {
 }
 
 .button-preview:hover {
-    background-color: #d1d5db; /* Lighter grey on hover */
+    background-color: #d1d5db; 
     transform: translateY(-1px);
     box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.06);
 }
@@ -256,6 +256,6 @@ body {
 
     .button {
         width: 100%;
-        max-width: none; /* Remove max-width on small screens */
+        max-width: none; 
     }
 }
