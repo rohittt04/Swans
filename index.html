@@ -9,9 +9,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
-    <!-- Your Styles -->
+    <!-- Global Styles (Load all CSS here so SPA pages have styles) -->
     <link rel="stylesheet" href="Styles/style.css">
     <link rel="stylesheet" href="Styles/profile.css">
+    <link rel="stylesheet" href="Styles/chat.css"> 
 </head>
 <body>
 
@@ -23,7 +24,7 @@
 
 <script>
     function loadHeader() {
-        fetch('header.html')
+        fetch('Components/header.html')
             .then(res => res.text())
             .then(data => {
                 document.getElementById('header-placeholder').innerHTML = data;
@@ -33,7 +34,7 @@
                     link.addEventListener('click', e => {
                         e.preventDefault();
                         const page = link.getAttribute('data-page');
-                        history.pushState({ page }, '', page); // change URL without reload
+                        history.pushState({ page }, '', page);
                         loadPage(page);
                     });
                 });
@@ -42,8 +43,8 @@
 
     function loadPage(page) {
         let pageFile = '';
-        if (page === 'chat') pageFile = 'Chat.html';
-        else if (page === 'profile') pageFile = 'Profile.html';
+        if (page === 'chat') pageFile = 'Pages/chat.html';
+        else if (page === 'profile') pageFile = 'Pages/Profile.html';
 
         if (pageFile) {
             fetch(pageFile)
