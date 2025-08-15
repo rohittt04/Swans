@@ -235,7 +235,7 @@ body {
 
 /* Gradient Button Styles */
 .gradient-button {
-    background: linear-gradient(45deg, #f0b7d3, #a2ddf5);;
+    background: linear-gradient(45deg, #f0b7d3, #a2ddf5);
     color: #FFFFFF;
     transition: all 0.3s ease;
     padding: 0.75rem;
@@ -289,5 +289,3 @@ body {
 .scrollbar-hide::-webkit-scrollbar {
     display: none;
 }
-
-
