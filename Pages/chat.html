@@ -1,53 +1,35 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SwanMatch Chat</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="../Styles/style.css">
 </head>
 <body>
-
-    <!-- Header -->
-    <div id="header-placeholder"></div>
-
-    <!-- Main Content Area -->
-    <main class="main-content">
-        <!-- Left Pane: Your Matches -->
-        <div class="left-pane">
-            <h2 class="left-pane-title">Your Matches</h2>
-            <div class="matches-partition"></div>
-            <div class="left-pane-placeholder">
-                <span class="left-pane-placeholder-emoji">💕</span>
-                <p class="left-pane-placeholder-text">No matches yet. Keep swiping to find your perfect match!</p>
+<main class="main-content">
+    <div class="left-pane">
+        <h2 class="left-pane-title">Your Matches</h2>
+        <div class="matches-partition"></div>
+        <div class="left-pane-placeholder">
+            <span class="left-pane-placeholder-emoji">💕</span>
+            <p class="left-pane-placeholder-text">No matches yet. Keep swiping to find your perfect match!</p>
+        </div>
+    </div>
+    <div class="right-pane">
+        <div id="chat-messages" class="chat-messages scrollbar-hide">
+            <div id="chat-placeholder" class="chat-messages-placeholder">
+                <i class="fas fa-comment-dots chat-messages-placeholder-icon"></i>
+                <p class="chat-messages-placeholder-text">Choose someone from your matches to start a conversation</p>
             </div>
         </div>
-
-        <!-- Right Pane: Chat Interface -->
-        <div class="right-pane">
-    
-
-            <!-- Chat Messages Area -->
-            <div id="chat-messages" class="chat-messages scrollbar-hide">
-                <!-- Initial Placeholder -->
-                <div id="chat-placeholder" class="chat-messages-placeholder">
-                    <i class="fas fa-comment-dots chat-messages-placeholder-icon"></i>
-                    <p class="chat-messages-placeholder-text">Choose someone from your matches to start a conversation</p>
-                </div>
-            </div>
-
-            <!-- Chat Input Area -->
-            <div class="chat-input-area">
-                <input type="text" id="message-input" placeholder="Type your message..."
-                       class="message-input">
-                <button id="send-button" class="gradient-button">
-                    <i class="fas fa-paper-plane gradient-button-icon"></i>
-                </button>
-            </div>
+        <div class="chat-input-area">
+            <input type="text" id="message-input" placeholder="Type your message..." class="message-input">
+            <button id="send-button" class="gradient-button">
+                <i class="fas fa-paper-plane gradient-button-icon"></i>
+            </button>
         </div>
-    </main>
-    <script src="../Scripts/script.js"></script>
+    </div>
+</main>
 </body>
 </html>
