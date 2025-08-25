@@ -1,0 +1,52 @@
+/* Chat Messages Container */
+        .chat-messages {
+            height: 400px;
+            /* adjust as needed */
+            overflow-y: auto;
+            padding: 12px;
+            background: #f9f9f9;
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        /* General Message Style */
+        .message {
+            max-width: 70%;
+            padding: 10px 14px;
+            border-radius: 18px;
+            font-size: 14px;
+            line-height: 1.4;
+            word-wrap: break-word;
+        }
+
+        /* Sent Messages (Your Side) */
+        .message.sent {
+            background: linear-gradient(45deg, #f0b7d3, #a2ddf5);
+            color: #353434;
+            align-self: flex-end;
+            border-bottom-right-radius: 4px;
+        }
+
+        /* Received Messages (Other Side) */
+        .message.received {
+            background: linear-gradient(45deg, #f0b7d3, #a2ddf5);;
+            color: #353434;
+            align-self: flex-start;
+            border-bottom-left-radius: 4px;
+        }
+
+        /* Chat Placeholder (before any message) */
+        .chat-messages-placeholder {
+            text-align: center;
+            margin-top: 40px;
+            color: #777;
+            font-size: 14px;
+        }
+
+        .chat-messages-placeholder-icon {
+            font-size: 32px;
+            margin-bottom: 10px;
+            color: #aaa;
+        }

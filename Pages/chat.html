@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +8,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="../Styles/style.css">
+    <link rel="stylesheet" href="../Styles/ChatCss.css">
+   
 </head>
+
 <body>
 
     <!-- Header -->
@@ -27,26 +31,69 @@
 
         <!-- Right Pane: Chat Interface -->
         <div class="right-pane">
-    
+
 
             <!-- Chat Messages Area -->
             <div id="chat-messages" class="chat-messages scrollbar-hide">
                 <!-- Initial Placeholder -->
                 <div id="chat-placeholder" class="chat-messages-placeholder">
                     <i class="fas fa-comment-dots chat-messages-placeholder-icon"></i>
-                    <p class="chat-messages-placeholder-text">Choose someone from your matches to start a conversation</p>
+                    <p class="chat-messages-placeholder-text">Choose someone from your matches to start a conversation
+                    </p>
                 </div>
             </div>
 
             <!-- Chat Input Area -->
             <div class="chat-input-area">
-                <input type="text" id="message-input" placeholder="Type your message..."
-                       class="message-input">
+                <input type="text" id="message-input" placeholder="Type your message..." class="message-input">
                 <button id="send-button" class="gradient-button">
                     <i class="fas fa-paper-plane gradient-button-icon"></i>
                 </button>
             </div>
         </div>
     </main>
+    <script src="https://cdn.socket.io/4.7.5/socket.io.min.js"></script>
+    <script>
+        const socket = io("http://localhost:3000"); 
+
+        const sendButton = document.getElementById("send-button");
+        const messageInput = document.getElementById("message-input");
+        const chatMessages = document.getElementById("chat-messages");
+        const chatPlaceholder = document.getElementById("chat-placeholder");
+
+        function addMessage(text, type = "sent") {
+            if (chatPlaceholder) chatPlaceholder.style.display = "none";
+
+            const message = document.createElement("div");
+            message.classList.add("message", type);
+            message.innerText = text;
+
+            chatMessages.appendChild(message);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        // Send message
+        sendButton.addEventListener("click", () => {
+            const text = messageInput.value.trim();
+            if (text !== "") {
+                addMessage(text, "sent");     
+                socket.emit("chatMessage", text); 
+                messageInput.value = "";
+            }
+        });
+
+        messageInput.addEventListener("keypress", (e) => {
+            if (e.key === "Enter") {
+                sendButton.click();
+            }
+        });
+
+        // Receive friend’s messages
+        socket.on("chatMessage", (msg) => {
+            addMessage(msg, "received");
+        });
+    </script>
+
 </body>
+
 </html>
